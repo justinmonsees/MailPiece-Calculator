@@ -1,0 +1,133 @@
+/**
+
+This is the CSS for the Mail Piece calculator main window
+
+
+lblTitle{
+    -fx-font-size: 20px;
+    }
+
+ .text-field:error {
+   -fx-text-box-border: red ;
+   -fx-focus-color: red ;
+ }
+  .text-field:valid {
+    -fx-text-box-border: green ;
+    -fx-focus-color: green ;
+  }
+  **/
+
+
+.combo-box .list-cell {
+    -fx-text-fill: black;
+}
+
+.combo-box-base .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box-base .arrow {
+    -fx-shape: "M8.124,13.625l4.125-3.375v2.889l-4.125,3.86L4,13.139V10.25L8.124,13.625z";
+    -fx-background-color: #2E5A66;
+}
+
+.combo-box-popup .list-view {
+    -fx-effect: null;
+}
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+}
+
+.combo-box-popup .list-view .list-cell:filled {
+    -fx-background-color: white;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover {
+    -fx-background-color: #2E5A66;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected {
+    -fx-background-color: white;
+}
+
+.button{
+    -fx-background-color: #03B5AA;
+    -fx-border-radius: 0;
+    -fx-border-color: white;
+    -fx-border-style: solid;
+    -fx-border-width: 2;
+    -fx-text-fill:white;
+}
+
+.root{
+    -fx-background-color: #006494;
+}
+
+#resultLabel{
+    -fx-background-color: white;
+}
+#regLabel{
+    -fx-text-fill:white;
+    }
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane
+{
+    -fx-tab-min-width:310px;
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+.tab-pane .tab
+{
+    -fx-background-color: #03B5AA;
+
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: white;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: black;
+}
+
+.text-field{
+    -fx-background-color: #006494;
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: white;
+    -fx-text-fill: white;
+}
+
+.menu-bar .label{
+     -fx-font-size: 12 pt;
+     -fx-padding: 0px 5px;
+}
+
+.menu-item .label{
+     -fx-font-size: 12 pt;
+}
+
+.menu{
+    -fx-padding: 0px 5px;
+}

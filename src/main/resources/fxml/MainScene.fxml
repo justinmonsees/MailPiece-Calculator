@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monsees.mailpiececalc.FXMLController">
+   <children>
+       <MenuBar fx:id="mnuMain" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="400.0">
+           <menus>
+               <Menu mnemonicParsing="false" text="File">
+                   <items>
+                       <MenuItem mnemonicParsing="false" onAction="#closeProgram" text="Close" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Tools">
+                   <items>
+                       <MenuItem mnemonicParsing="false" onAction="#openPaperManager" text="Manage Papers" />
+                   </items>
+               </Menu>
+           </menus>
+       </MenuBar>
+
+
+       <!-- Top Banner -->
+      <AnchorPane layoutY="20.0" prefHeight="39.0" prefWidth="400.0" style="-fx-background-color: #0B132B;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="33.0" prefHeight="39.0" prefWidth="334.0" text="MAIL PIECE CALCULATOR" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Nike Total 90" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+
+       <!-- Mail Component selection section -->
+       <Label layoutX="25.0" layoutY="81.0" text="Choose your mail component:" textFill="#fffefe">
+           <font>
+               <Font name="Trebuchet MS" size="13.0" />
+           </font>
+       </Label>
+       <ComboBox fx:id="compType" layoutX="207.0" layoutY="76.0" onAction="#compTypeChanged" prefHeight="26.0" prefWidth="168.0">
+       <items>
+           <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Self Mailer" />
+               <String fx:value="Insert" />
+               <String fx:value="Booklet" />
+               <String fx:value="Envelope" />
+           </FXCollections>
+       </items>
+       <value>
+           <String fx:value="Self Mailer" />
+       </value>
+       </ComboBox>
+
+       <!-- Self Mailer Anchor Pane -->
+       <AnchorPane fx:id="ancPane_SelfMailer" layoutY="113.0" prefHeight="191.0" prefWidth="400.0" visible="false">
+         <children>
+            <Label layoutX="47.0" layoutY="29.0" text="Flat Size:" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_SM_Width" alignment="CENTER" layoutX="125.0" layoutY="26.0" prefHeight="26.0" prefWidth="60.0" promptText="W">
+               <font>
+                  <Font name="Trebuchet MS" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="198.0" layoutY="22.0" text="X" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_SM_Height" alignment="CENTER" layoutX="232.0" layoutY="26.0" prefHeight="26.0" prefWidth="60.0" promptText="H">
+               <font>
+                  <Font name="Trebuchet MS" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="68.0" layoutY="69.0" text="Paper:" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmb_SM_Paper" layoutX="123.0" layoutY="66.0" prefHeight="26.0" prefWidth="214.0" />
+            <Label layoutX="27.0" layoutY="112.0" text="# of Panels:" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_SM_NumPanels" alignment="CENTER" layoutX="125.0" layoutY="109.0" prefHeight="26.0" prefWidth="77.0">
+               <font>
+                  <Font name="Trebuchet MS" size="12.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+
+       <!-- Inserts Anchor Pane -->
+       <AnchorPane fx:id="ancPane_Insert" layoutY="113.0" prefHeight="197.0" prefWidth="400.0" visible="false">
+           <children>
+               <Label layoutX="47.0" layoutY="29.0" text="Flat Size:" textFill="WHITE">
+                   <font>
+                       <Font size="16.0" />
+                   </font>
+               </Label>
+               <TextField fx:id="txt_INS_Width" alignment="CENTER" layoutX="125.0" layoutY="26.0" prefHeight="26.0" prefWidth="60.0" promptText="W">
+                   <font>
+                       <Font name="Trebuchet MS" size="12.0" />
+                   </font>
+               </TextField>
+               <Label layoutX="198.0" layoutY="22.0" text="X" textFill="WHITE">
+                   <font>
+                       <Font size="32.0" />
+                   </font>
+               </Label>
+               <TextField fx:id="txt_INS_Height" alignment="CENTER" layoutX="232.0" layoutY="26.0" prefHeight="26.0" prefWidth="60.0" promptText="H">
+                   <font>
+                       <Font name="Trebuchet MS" size="12.0" />
+                   </font>
+               </TextField>
+               <Label layoutX="68.0" layoutY="69.0" text="Paper:" textFill="WHITE">
+                   <font>
+                       <Font size="16.0" />
+                   </font>
+               </Label>
+               <ComboBox fx:id="cmb_INS_paper" layoutX="123.0" layoutY="66.0" prefHeight="26.0" prefWidth="214.0" />
+               <Label layoutX="27.0" layoutY="112.0" text="# of Panels:" textFill="WHITE">
+                   <font>
+                       <Font size="16.0" />
+                   </font>
+               </Label>
+               <TextField fx:id="txt_INS_NumPanels" alignment="CENTER" layoutX="125.0" layoutY="109.0" prefHeight="26.0" prefWidth="77.0">
+                   <font>
+                       <Font name="Trebuchet MS" size="12.0" />
+                   </font>
+               </TextField>
+               <Label layoutX="27.0" layoutY="147.0" text="# of Pages:" textFill="WHITE">
+                   <font>
+                       <Font size="16.0" />
+                   </font>
+               </Label>
+               <TextField fx:id="txt_INS_NumPages" alignment="CENTER" layoutX="125.0" layoutY="144.0" prefHeight="26.0" prefWidth="77.0">
+                   <font>
+                       <Font name="Trebuchet MS" size="12.0" />
+                   </font>
+               </TextField>
+           </children>
+       </AnchorPane>
+
+       <!-- Booklet Anchor Pane -->
+       <AnchorPane fx:id="ancPane_Booklet" layoutY="113.0" prefHeight="191.0" prefWidth="400.0">
+           <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="29.0" text="Flat Size:" textFill="WHITE">
+                   <font>
+                       <Font size="12.0" />
+                   </font>
+               </Label>
+               <TextField fx:id="txt_BK_Width" alignment="CENTER" layoutX="125.0" layoutY="24.0" prefHeight="26.0" prefWidth="60.0" promptText="W">
+                   <font>
+                       <Font name="Trebuchet MS" size="12.0" />
+                   </font>
+               </TextField>
+               <Label layoutX="198.0" layoutY="20.0" text="X" textFill="WHITE">
+                   <font>
+                       <Font size="32.0" />
+                   </font>
+               </Label>
+               <TextField fx:id="txt_BK_Height" alignment="CENTER" layoutX="232.0" layoutY="24.0" prefHeight="26.0" prefWidth="60.0" promptText="H">
+                   <font>
+                       <Font name="Trebuchet MS" size="12.0" />
+                   </font>
+               </TextField>
+               <Label layoutX="20.0" layoutY="69.0" text="Cover Paper:" textFill="WHITE">
+                   <font>
+                       <Font size="12.0" />
+                   </font>
+               </Label>
+               <ComboBox fx:id="cmb_BK_CvrPaper" layoutX="123.0" layoutY="63.0" prefHeight="30.0" prefWidth="214.0" />
+               <Label layoutX="27.0" layoutY="147.0" text="# of Pages:" textFill="WHITE">
+                   <font>
+                       <Font size="12.0" />
+                   </font>
+               </Label>
+               <TextField fx:id="txt_BK_NumPages" alignment="CENTER" layoutX="125.0" layoutY="139.0" prefHeight="26.0" prefWidth="77.0">
+                   <font>
+                       <Font name="Trebuchet MS" size="12.0" />
+                   </font>
+               </TextField>
+               <Label layoutX="31.0" layoutY="109.0" text="Text Paper:" textFill="WHITE">
+                   <font>
+                       <Font size="12.0" />
+                   </font>
+               </Label>
+               <ComboBox fx:id="cmb_BK_TxtPaper" layoutX="123.0" layoutY="106.0" prefHeight="26.0" prefWidth="214.0" />
+           </children>
+       </AnchorPane>
+
+       <!-- Envelope Anchor Pane -->
+       <AnchorPane fx:id="ancPane_Envelope" layoutY="113.0" prefHeight="197.0" prefWidth="400.0" visible="false">
+           <children>
+               <Label layoutX="49.0" layoutY="89.0" text="Envelope:" textFill="WHITE">
+                   <font>
+                       <Font size="16.0" />
+                   </font>
+               </Label>
+               <ComboBox fx:id="cmb_ENV_paper" layoutX="138.0" layoutY="86.0" prefHeight="26.0" prefWidth="214.0" />
+           </children>
+       </AnchorPane>
+
+
+
+        <!-- Component List Box and Button Section -->
+      <ListView fx:id="lst_components" layoutX="33.0" layoutY="365.0" prefHeight="164.0" prefWidth="334.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ListView>
+      <Button fx:id="btn_add" layoutX="33.0" layoutY="323.0" mnemonicParsing="false" onAction="#addComponent" prefHeight="26.0" prefWidth="84.0" text="Add" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_remove" layoutX="283.0" layoutY="323.0" mnemonicParsing="false" onAction="#removeComponent" prefHeight="26.0" prefWidth="84.0" text="Remove" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_calculate" layoutX="157.0" layoutY="536.0" mnemonicParsing="false" onAction="#calculate" prefHeight="26.0" prefWidth="84.0" text="Calculate" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS" size="12.0" />
+         </font>
+      </Button>
+
+       <!-- Results Section -->
+      <Label layoutX="117.0" layoutY="567.0" text="Weight:" textFill="#fffefe">
+         <font>
+            <Font name="Trebuchet MS" size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="221.0" layoutY="567.0" prefHeight="16.0" prefWidth="70.0" text="Thickness:" textAlignment="RIGHT" textFill="#fffefe">
+         <font>
+            <Font name="Trebuchet MS" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="593.0" text="Per Piece:" textFill="#fffefe">
+         <font>
+            <Font name="Trebuchet MS" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="617.0" text="Per 10 Pieces:" textFill="#fffefe">
+         <font>
+            <Font name="Trebuchet MS" size="13.0" />
+         </font>
+      </Label>
+      <Label id="resultLabel" fx:id="lblWeightPerPiece" layoutX="112.0" layoutY="589.0" prefHeight="20.0" prefWidth="70.0" />
+      <Label id="resultLabel" fx:id="lblWeightPer10Pieces" layoutX="112.0" layoutY="615.0" prefHeight="20.0" prefWidth="70.0" />
+      <Label id="resultLabel" fx:id="lblThicknessPerPiece" layoutX="221.0" layoutY="589.0" prefHeight="20.0" prefWidth="70.0" />
+      <Label id="resultLabel" fx:id="lblThicknessPer10Pieces" layoutX="221.0" layoutY="615.0" prefHeight="20.0" prefWidth="70.0" />
+      <Label id="regLabel" layoutX="186.0" layoutY="587.0" text="OZ">
+         <font>
+            <Font name="Trebuchet MS" size="20.0" />
+         </font>
+      </Label>
+      <Label id="regLabel" layoutX="187.0" layoutY="611.0" text="OZ">
+         <font>
+            <Font name="Trebuchet MS" size="20.0" />
+         </font>
+      </Label>
+      <Label id="regLabel" layoutX="300.0" layoutY="589.0" text="IN">
+         <font>
+            <Font name="Trebuchet MS" size="20.0" />
+         </font>
+      </Label>
+      <Label id="regLabel" layoutX="300.0" layoutY="611.0" text="IN">
+         <font>
+            <Font name="Trebuchet MS" size="20.0" />
+         </font>
+      </Label>
+
+
+   </children>
+</AnchorPane>
