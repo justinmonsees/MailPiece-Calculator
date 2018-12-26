@@ -14,6 +14,75 @@
         <mainClass>com.monsees.mailpiececalc.MainApp</mainClass>
     </properties>
     
+    <profiles>
+        <profile>
+            <id>osx-x64</id>
+            <activation>
+                <os>
+                    <family>mac</family>
+                    <name>Mac OS X</name>
+                    <arch>x86_64</arch>
+                </os>
+            </activation>
+            <properties>
+                <installer.bundler>dmg</installer.bundler>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>windows-x64</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                    <arch>amd64</arch>
+                </os>
+            </activation>
+            <properties>
+                <installer.bundler>msi</installer.bundler>
+            </properties>
+        </profile>
+        <profile>
+            <id>windows-x86</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                    <arch>x86</arch>
+                </os>
+            </activation>
+            <properties>
+                <installer.bundler>msi</installer.bundler>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>linux-x64</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                    <name>Linux</name>
+                    <arch>amd64</arch>
+                </os>
+            </activation>
+            <properties>
+                <installer.bundler>deb</installer.bundler>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux-x86</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                    <name>Linux</name>
+                    <arch>i386</arch>
+                </os>
+            </activation>
+            <properties>
+                <installer.bundler>deb</installer.bundler>
+            </properties>
+        </profile>
+
+    </profiles>
+    
     <dependencies>
         <dependency>
             <groupId>mysql</groupId>
@@ -29,7 +98,7 @@
     
     <organization>
         <!-- Used as the 'Vendor' for JNLP generation -->
-        <name>Your Organisation</name>
+        <name>Justin Monsees</name>
     </organization>
 
     <build>
@@ -141,8 +210,11 @@
                 </executions>
                 <configuration>
                     <mainClass>com.monsees.mailpiececalc.MainApp</mainClass>
+                    <bundler>${installer.bundler}</bundler>
                     <bundleArguments>
                         <runtime /> <!-- dont include JRE, use installed one -->
+                        <systemWide>true</systemWide>
+                        <installdirChooser>true</installdirChooser>
                     </bundleArguments>
                 </configuration>
             </plugin>
